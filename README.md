@@ -1,7 +1,8 @@
 Rocket Chip Generator :rocket: [![Build Status](https://travis-ci.org/freechipsproject/rocket-chip.svg?branch=master)](https://travis-ci.org/freechipsproject/rocket-chip)
 =====================
 
-This repository contains the Rocket chip generator necessary to instantiate
+This repository is a fork of the main Rocket repository for the a Multicore Architecture Course. Mod by: Jonatan and Carlos.
+It contains the Rocket chip generator necessary to instantiate
 the RISC-V Rocket Core. For more information on Rocket Chip, please consult our [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-17.html).
 
 ## Table of Contents
