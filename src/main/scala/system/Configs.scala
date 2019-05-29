@@ -75,3 +75,68 @@ class BaseFPGAConfig extends Config(new BaseConfig)
 
 class DefaultFPGAConfig extends Config(new WithNSmallCores(1) ++ new BaseFPGAConfig)
 class DefaultFPGASmallConfig extends Config(new DefaultFPGAConfig)
+
+
+//MA Configs Coherence Protocols
+
+class MESI2Config extends Config(
+  new WithNBigCores(2) ++ 
+  new BaseConfig)
+
+class MSI2Config extends Config(
+  new WithNBigCores(2) ++ 
+  new WithMSICoherence ++
+  new BaseConfig)
+
+class MI2Config extends Config(
+  new WithNBigCores(2) ++ 
+  new WithMICoherence ++
+  new BaseConfig)
+
+
+
+class MESI4Config extends Config(
+  new WithNBigCores(4) ++ 
+  new BaseConfig)
+
+class MSI4Config extends Config(
+  new WithNBigCores(4) ++ 
+  new WithMSICoherence ++
+  new BaseConfig)
+
+class MI4Config extends Config(
+  new WithNBigCores(4) ++ 
+  new WithMICoherence ++
+  new BaseConfig)
+
+
+
+class MESI6Config extends Config(
+  new WithNBigCores(6) ++ 
+  new BaseConfig)
+
+class MSI6Config extends Config(
+  new WithNBigCores(6) ++ 
+  new WithMSICoherence ++
+  new BaseConfig)
+
+class MI6Config extends Config(
+  new WithNBigCores(6) ++ 
+  new WithMICoherence ++
+  new BaseConfig)
+
+
+
+class MESI8Config extends Config(
+  new WithNBigCores(8) ++ 
+  new BaseConfig)
+
+class MSI8Config extends Config(
+  new WithNBigCores(8) ++ 
+  new WithMSICoherence ++
+  new BaseConfig)
+
+class MI8Config extends Config(
+  new WithNBigCores(8) ++ 
+  new WithMICoherence ++
+  new BaseConfig)
