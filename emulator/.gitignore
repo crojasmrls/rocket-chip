@@ -9,3 +9,4 @@ generated-src-debug
 kernel
 kernel.hex
 verilator/
+OutputTB/
