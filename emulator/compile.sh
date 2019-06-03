@@ -6,6 +6,6 @@ do
     	CONSTANT=Config
     	CONF=$PART$CONSTANT
     	echo "$CONF"
-    	make CONFIG=$CONF debug
+    	make CONFIG=$CONF
     done
 done
