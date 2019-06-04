@@ -1,0 +1,8 @@
+This emulator compiled with JTAG Remote Bitbang client. To enable, use +jtag_rbb_enable=1.
+Listening on port 36545
+
+NCORES = 6
+Independent memory destination C = A + B
+vvadd4(cid, nc, 1000, input1_data, input2_data, results_data); barrier(nc): 34545 cycles, 34.5 cycles/iter, 9.2 CPI, Num-Executed_Inst 3735
+Reuse of memory destination A = A + B
+vvadd4(cid, nc, 1000, results_data, input2_data, results_data); barrier(nc): 33642 cycles, 33.6 cycles/iter, 17.6 CPI, Num-Executed_Inst 1911
