@@ -1,5 +1,7 @@
 import sys
 
+ScriptName = "autotest.py"
+
 def open_file(path_of_file,mode):
 	#Try to open File 
 	if mode == 'w':
@@ -121,7 +123,7 @@ def export_csv(path,data,protocols,cores, paterns):
 	csv_out.insert(0,"Protocol,Test Case,Number of Cores, Cycles, Cycles/iteration, CPI, Number of Instructions\n")
 
 	print(path)
-	save_file(ruta[:-1]+"csv_out.csv",csv_out)
+	save_file(path[:-1]+"csv_out.csv",csv_out)
 
 
 
@@ -139,16 +141,33 @@ def list_to_csv(lista):
 
 args = sys.argv[1:]
 len_args = len(args)
-coherece_prot = ['MESI','MSI','MI']
 paterns = ['Independent','Reuse']
 test = {}
 
 
-if len_args == 3:
+if(len_args==1):							 #Single argument instrucions
+
+	if args[0] == "-help":       
+
+		print('\n \t \t \t \t \t *** Python Output Data Parser ***'
+			  '\n\nTo get data from output: \n'
+			  '\n\t python3 '+ ScriptName + ' <Folder/ForlderWhithNameOfTheTest> <list of cores>  <nIter> <list_of_protocols> <optional output name>'
+			  '\n\t\t\t List are coma separed values: 1,2,3,4... MSI,MI,MESI...'
+
+			  '\n\nTo display help: \n'
+			  '\n\t python3 '+ ScriptName + ' -help')
+
+	else:
+		
+		raise Exception(" No " + cmd_args[0] +" comand found: \n \v -For help type:"+ScriptName+" -help")
+
+
+if len_args >= 4 and len_args <=5:
 	ruta       = args[0]
 	test_name  = ruta.split('/')[1]
 	n_cores    = args[1].split(',')
 	n_iters    = args[2]
+	coherece_prot = args[3].split(',')
 	test_by_ncores = {}
 
 	data_tests = []
@@ -163,7 +182,11 @@ if len_args == 3:
 
 	print(test)
 
-	export_csv(ruta,test,coherece_prot,n_cores,paterns)
+	if len_args == 5:
+		export_csv(ruta.split('/')[0]+"/"+args[4],test,coherece_prot,n_cores,paterns)
+		
+	else:
+		export_csv(ruta,test,coherece_prot,n_cores,paterns)
 
 
 
